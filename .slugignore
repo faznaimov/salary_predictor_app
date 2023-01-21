@@ -1,0 +1,6 @@
+.github
+/components
+/data
+/screenshots
+*.ipynb
+*.md
