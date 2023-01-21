@@ -4,6 +4,8 @@ import pandas as pd
 from .data import process_data
 
 # Optional: implement hyperparameter tuning.
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -20,11 +22,12 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    clf = RandomForestClassifier()  
+    clf = RandomForestClassifier()
     # Training the model on the training dataset
-    # fit function is used to train the model using the training sets as parameters
+    # fit function is used to train the model using the training sets as
+    # parameters
     rf_model = clf.fit(X_train, y_train)
-    
+
     return rf_model
 
 
@@ -69,7 +72,14 @@ def inference(model, X):
     return y_pred
 
 
-def compute_metrics_by_slice(clf, encoder, lb, df, target, cat_columns, output_path=None):
+def compute_metrics_by_slice(
+        clf,
+        encoder,
+        lb,
+        df,
+        target,
+        cat_columns,
+        output_path=None):
     """Compute metrics by slice of the data.
     For simplicity, the function outputs the performance on slices of just the categorical features.
     Inputs
