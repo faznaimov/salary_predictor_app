@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import pandas as pd
 import pickle as pkl
 import os
-from typing import Literal
+from typing_extensions import Literal
 from pydantic import BaseModel
 
 import starter.config as config
