@@ -34,7 +34,7 @@ def input():
     
     return test, X_test, y_test, encoder, lb, model
 
-def inference(input):
+def test_inference(input):
     '''
     test inference function
     '''

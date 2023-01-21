@@ -3,7 +3,7 @@ from ml.model import train_model, compute_model_metrics, inference, compute_metr
 from ml.data import process_data
 import config
 import pandas as pd
-import joblib
+import pickle as pkl
 from sklearn.model_selection import train_test_split
 import warnings
 warnings.filterwarnings("ignore")
@@ -30,7 +30,8 @@ X_test, y_test, _, _ = process_data(
 model = train_model(X_train, y_train)
 
 # Save the model.
-joblib.dump(model, config.model_pth)
+with open(config.model_pth, "wb") as file:
+    pkl.dump([encoder, lb, model], file)
 
 # Get preditions on test data.
 y_pred = inference(model, X_test)
