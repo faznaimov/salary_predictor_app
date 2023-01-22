@@ -2,7 +2,6 @@ from fastapi import FastAPI
 import pandas as pd
 import pickle as pkl
 import os
-from typing_extensions import Literal
 from pydantic import BaseModel, Field
 
 import starter.config as config
@@ -21,11 +20,6 @@ app = FastAPI(
     description="This API helps to classify",
     version="1.0.0",
 )
-
-@app.on_event("startup")
-async def startup_event(): 
-    global model, encoder, lb
-    encoder, lb, model = pkl.load(open(config.model_pth, 'rb'))
 
 def hyphen_to_underscore(field_name):
     return f"{field_name}".replace("_", "-")
@@ -50,13 +44,24 @@ class InputData(BaseModel):
         alias_generator = hyphen_to_underscore
         allow_population_by_field_name = True
 
+'''
+@app.on_event("startup")
+async def startup_event(): 
+    global model, encoder, lb
+    with open(config.model_pth, 'rb') as f:
+        encoder, lb, model = pkl.load(f)
+'''
+
 @app.get("/")
 async def welcome():
     return {'message': 'Welcome to the salary predictor!'}
 
 @app.post("/predictions")
 async def prediction(input_data: InputData):
-
+    
+    with open(config.model_pth, 'rb') as f:
+        encoder, lb, model = pkl.load(f)
+        
     # Formatting input_data
     input_df = pd.DataFrame(
         {k: v for k, v in input_data.dict().items()}, index=[0]
