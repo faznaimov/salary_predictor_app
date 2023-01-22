@@ -16,7 +16,7 @@
 ## Project Description
 Salary prediction model that is trained on [Census Bureau data](https://archive.ics.uci.edu/ml/datasets/census+income) and deployed with FastAPI. A remote DVC pointing to AWS S3 bucket that tracks data changes. In addition, wrote unit tests to monitor the model performance on various slices of the data. Deployed my model using the FastAPI package and created API tests. Both the slice-validation and the API tests are incorporated into a CI/CD framework using GitHub Actions.
 
-[Deployed App](https://salary-predictor.onrender.com)
+[Deployed App](https://salary-predictor.onrender.com/docs)
 
 ## App screenshot
 
