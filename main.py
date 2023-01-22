@@ -26,20 +26,20 @@ def hyphen_to_underscore(field_name):
 
 class InputData(BaseModel):
     age: int = Field(..., example=45)
-    capital_gain: int = Field(..., example=2174)
-    capital_loss: int = Field(..., example=0)
+    workclass: str = Field(..., example="State-gov")
+    fnlgt: int = Field(..., example=2334)
     education: str = Field(..., example="Bachelors")
     education_num: int = Field(..., example=13)
-    fnlgt: int = Field(..., example=2334)
-    hours_per_week: int = Field(..., example=60)
     marital_status: str = Field(..., example="Never-married")
-    native_country: str = Field(..., example="Cuba")
     occupation: str = Field(..., example="Prof-specialty")
-    race: str = Field(..., example="Black")
     relationship: str = Field(..., example="Wife")
+    race: str = Field(..., example="Black")
     sex: str = Field(..., example="Female")
-    workclass: str = Field(..., example="State-gov")
-
+    capital_gain: int = Field(..., example=2174)
+    capital_loss: int = Field(..., example=0)
+    hours_per_week: int = Field(..., example=60)
+    native_country: str = Field(..., example="Cuba")
+    
     class Config:
         alias_generator = hyphen_to_underscore
         allow_population_by_field_name = True
