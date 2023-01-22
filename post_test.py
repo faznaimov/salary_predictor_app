@@ -18,7 +18,7 @@ data = {
     "native_country": "United-States"
 }
 
-response = requests.post('https://salary-predictor.onrender.com', data=json.dumps(data))
+response = requests.post('https://salary-predictor.onrender.com/predictions', data=json.dumps(data))
 
 print(response.status_code)
 print(response.json())
