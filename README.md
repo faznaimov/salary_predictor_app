@@ -10,6 +10,7 @@
 - [Usage](#usage)
   * [Create Environment](#create-environment)
   * [Run The App on Local Machine](#run-the-app-on-local-machine)
+  * [Run Test Scripts](#run-test-scripts)
 - [License](#license)
 
 ## Project Description
@@ -72,6 +73,11 @@ Make sure to have conda installed and ready.
 ### Run The App on Local Machine
 ```
 uvicorn main:app --reload
+```
+
+### Run Test Scripts
+```
+python -m pytest -vv
 ```
 
 ## License

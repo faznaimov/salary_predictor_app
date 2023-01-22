@@ -1,3 +1,10 @@
+'''
+Module to test main.py
+
+Author: Faz Naimov
+Date: 1/21/2023
+'''
+
 import pytest
 from main import app
 from fastapi.testclient import TestClient

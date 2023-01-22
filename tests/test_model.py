@@ -12,6 +12,7 @@ import os
 import starter.ml.model as cls
 from starter.ml.data import process_data
 import starter.config as config
+from sklearn.exceptions import NotFittedError
 
 @pytest.fixture()
 def input():
@@ -91,3 +92,11 @@ def test_compute_metrics_by_slice(input):
     )
     
     assert os.path.isfile(config.metrics_pth)
+    
+    
+def test_model(input):
+    _, X_test, _, _, _, model = input
+    try:
+        model.predict(X_test)
+    except NotFittedError as e:
+        raise e

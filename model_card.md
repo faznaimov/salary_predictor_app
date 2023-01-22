@@ -16,7 +16,7 @@ The training data census.csv is a well-know dataset that is described using pand
 This dataset has 14 variables: 6 numerical and 8 categorical. The total number of observations are 32561.
 
 ## Evaluation Data
-The evaluation of the data is done in the test dataset.
+The evaluation of the data is done in the test dataset that is 20% of Census data.
 
 ## Metrics
 Three different metrics have been used in this project:
