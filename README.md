@@ -23,7 +23,7 @@ Salary prediction model that is trained on [Census Bureau data](https://archive.
 ![App](/screenshots/app.png)
 
 ## Files and Data description
-The directories structure are list as below:
+The directory structure:
 ```bash
 .
 ├── data
